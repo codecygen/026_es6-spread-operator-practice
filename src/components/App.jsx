@@ -12,6 +12,7 @@ const App = () => {
 
   const handleClick = () => {
     setItems(prevItems => [...prevItems, item]);
+    setItem("");
   }
 
   return (
