@@ -12,7 +12,6 @@ const App = () => {
 
   const handleClick = () => {
     setItems(prevItems => [...prevItems, item]);
-    console.log(items);
   }
 
   return (
