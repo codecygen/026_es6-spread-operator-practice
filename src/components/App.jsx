@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-
-
-
-
+import List from './List';
 
 const App = () => {
   const [ item, setItem ] = useState('');
-  const [ submittedItems, setSubmittedItems ] = useState('');
+  const [ items, setItems ] = useState([]);
 
   const handleChange = (e) => {
   const inputValue = e.target.value;
@@ -14,10 +11,9 @@ const App = () => {
   }
 
   const handleClick = () => {
-    setSubmittedItems(item);
+    setItems(prevItems => [...prevItems, item]);
+    console.log(items);
   }
-
-
 
   return (
     <div className="container">
@@ -29,7 +25,7 @@ const App = () => {
           type="text" 
           placeholder='Enter New Item'
           onChange={handleChange}
-          // value=
+          value={item}
         />
         <button onClick={handleClick}>
           <span>Add</span>
@@ -37,7 +33,14 @@ const App = () => {
       </div>
       <div>
         <ul>
-          <li>{submittedItems}</li>
+          {items.map((currentItem, index) => {
+            return(
+              <List 
+                key={index}
+                item={currentItem}
+              />
+            );
+          })}
         </ul>
       </div>
     </div>
