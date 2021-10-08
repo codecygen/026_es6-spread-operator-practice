@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import List from './List';
+import ToDoItem from './ToDoItem';
 
 const App = () => {
   const [ item, setItem ] = useState('');
@@ -35,7 +35,7 @@ const App = () => {
         <ul>
           {items.map((currentItem, index) => {
             return(
-              <List 
+              <ToDoItem 
                 key={index}
                 item={currentItem}
               />
