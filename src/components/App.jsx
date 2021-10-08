@@ -16,7 +16,7 @@ const App = () => {
   }
 
   const deleteItem = () => {
-    alert('hi');
+    
   }
 
   return (
@@ -39,8 +39,15 @@ const App = () => {
         <ul>
           {items.map((currentItem, index) => {
             return(
+              // we used id as an index key too because props have no
+              // way of accessing "key" key.
+              // id will be used to delete the item.
+              // Normally the index value that is passed from map, is not suggested
+              // To be used as a value. For a real project look online for alternative
+              // solutions
               <ToDoItem 
                 key={index}
+                id={index}
                 item={currentItem}
                 onChecked={deleteItem}
               />
