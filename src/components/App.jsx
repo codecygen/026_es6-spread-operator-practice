@@ -8,7 +8,6 @@ const App = () => {
 
   const handleClick = (item) => {
     setItems(prevItems => [...prevItems, item]);
-    // setItem("");
   }
 
   const deleteItem = (id) => {
@@ -27,17 +26,6 @@ const App = () => {
         <InputArea 
           onClicked={handleClick}
         />
-        {/* <div className="form">
-          <input 
-            type="text" 
-            placeholder='Enter New Item'
-            onChange={handleChange}
-            value={item}
-          />
-          <button onClick={handleClick}>
-            <span>Add</span>
-          </button>
-        </div> */}
       <div>
         <ul>
           {items.map((currentItem, index) => {
