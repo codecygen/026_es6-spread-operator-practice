@@ -5,16 +5,18 @@ import React, { useState } from 'react';
 
 const ToDoItem = (props) => {
 
-    const [ strikeText, setStrikeText ] = useState('none');
+    const [ isDone, setIsDone ] = useState(false);
 
-    const strikeTextFunc = () => {
-        strikeText === 'none' ? setStrikeText('line-through') : setStrikeText('none');
+    const handleClick = () => {
+        setIsDone(prevValue => {
+            return !prevValue;
+        });
     }
     // "line-through"
     return(
         <li 
-            style={{textDecoration: strikeText}}
-            onClick={strikeTextFunc}
+            style={{textDecoration: isDone ? 'line-through' : 'none'}}
+            onClick={handleClick}
                 >{props.item}
         </li>
     );
