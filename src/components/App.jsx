@@ -15,8 +15,12 @@ const App = () => {
     setItem("");
   }
 
-  const deleteItem = () => {
-    
+  const deleteItem = (id) => {
+    setItems(prevItems => {
+      return prevItems.filter((items, index) => {
+        return index !== id;
+      });
+    });
   }
 
   return (
