@@ -15,6 +15,10 @@ const App = () => {
     setItem("");
   }
 
+  const deleteItem = () => {
+    alert('hi');
+  }
+
   return (
     <div className="container">
       <div className="heading">
@@ -38,6 +42,7 @@ const App = () => {
               <ToDoItem 
                 key={index}
                 item={currentItem}
+                onChecked={deleteItem}
               />
             );
           })}

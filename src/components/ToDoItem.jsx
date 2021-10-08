@@ -16,7 +16,10 @@ const ToDoItem = (props) => {
     return(
         <li 
             style={{textDecoration: isDone ? 'line-through' : 'none'}}
-            onClick={handleClick}
+            onClick={() => {
+                handleClick();
+                props.onChecked();
+            }}
                 >{props.item}
         </li>
     );
